@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="utf8">
+        <title>Bubble Pop</title>
+        <!-- CSS -->
+        <link href="_css/main.css" rel="stylesheet">
+        <link href="_css/game.css" rel="stylesheet">
+        <!-- JavaScript -->
+        <script src="_js/modernizr-custom.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+        </script>
+        <script src="_js/ui.js"></script>
+        <script src="_js/game.js"></script>
+        <script src="_js/bubble.js"></script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="top_bar"></div>
+            <div id="game">
+                <div id="board">
+                    <!-- all of the game elements are going to be loaded here 
+                        with avaScript -->
+                </div>
+            </div>
+            <div id="footer_bar">
+                <div id="start_game" class="dialog">
+                    <div id="start_game_message">
+                        <h2>Start a new game</h2>
+                    </div>
+                    <div class="but_start_game button">
+                        New Game
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function() {
+            alert("Document is ready!");
+            var game = new BubblePop.Game();
+            game.init();
+        });
+    </script>
+</html>

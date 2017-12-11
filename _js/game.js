@@ -19,6 +19,16 @@ BubblePop.Game = (function($) {
         };
         var clickGameScreen = function(e) {
             var angle = BubblePop.ui.getBubbleAngle(curBubble.getSprite(),e);
+            var duration = 750;
+            var distance = 1000;
+            var distX = Math.sin(angle) * distance;
+            var distY = Math.cos(angle) * distance;
+            var bubbleCoordinates = BubblePop.ui.getBubbleCoordinates(curBubble.getSprite());
+            var coordinates = {
+                x : bubbleCoordinates.left + distX,
+                y : bubbleCoordinates.top - distY
+            };
+            BubblePop.ui.fireBubble(curBubble, coordinates, duration);
         };
     };
     return Game;

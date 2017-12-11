@@ -29,6 +29,16 @@ BubblePop.ui = function($) {
                 angle += Math.PI;
             }
             return angle;
+        },
+        fireBubble : function(bubble, coordinates, duration) {
+            bubble.getSprite().animate({
+                left: coordinates.x - ui.BUBBLE_DIMS/2,
+                top: coordinates.y - ui.BUBBLE_DIMS/2
+            },
+            {
+                duration : duration,
+                easing : "linear"
+            })
         }
     };
     return ui;

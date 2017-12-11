@@ -1,7 +1,7 @@
 var BubblePop = window.BubblePop || {};
 BubblePop.ui = function($) {
     var ui = {
-        BUBBLE_DIMS = 44,
+        BUBBLE_DIMS : 44,
         init : function() {
 
         },

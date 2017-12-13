@@ -1,4 +1,5 @@
 var BubblePop = window.BubblePop || {};
+
 BubblePop.Bubble = function($) {
     var Bubble = function(col, row, type, sprite) {
         var that = this;

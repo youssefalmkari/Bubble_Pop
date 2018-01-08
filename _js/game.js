@@ -32,13 +32,20 @@ BubblePop.Game = (function($) {
             var angle = BubblePop.ui.getBubbleAngle(curBubble.getSprite(),e);
             var duration = 750;
             var distance = 1000;
-            var distX = Math.sin(angle) * distance;
-            var distY = Math.cos(angle) * distance;
-            var bubbleCoordinates = BubblePop.ui.getBubbleCoordinates(curBubble.getSprite());
-            var coordinates = {
-                x : bubbleCoordinates.left + distX,
-                y : bubbleCoordinates.top - distY
-            };
+            var collision = BubblePop.CollisionDetector.findIntersection(curBubble, board, angle);
+            if (collision) {
+                var coordinates = collision.coordinates;
+                duration = Math.round(duration * collision.distanceToCollision / distance);
+                board.addBubble(curBubble, coordinates);
+            } else {
+                var distX = Math.sin(angle) * distance;
+                var distY = Math.cos(angle) * distance;
+                var bubbleCoordinates = BubblePop.ui.getBubbleCoordinates(curBubble.getSprite());
+                var coordinates = {
+                    x : bubbleCoordinates.left + distX,
+                    y : bubbleCoordinates.top - distY
+                };
+            }
             BubblePop.ui.fireBubble(curBubble, coordinates, duration);
             curBubble = getNextBubble();
         };

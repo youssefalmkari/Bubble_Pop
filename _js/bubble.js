@@ -7,7 +7,9 @@ BubblePop.Bubble = function($) {
         this.getType = function() {return type;};
         this.getSprite = function() {return sprite;};
         this.getCol = function() {return col;};
+        this.setCol = function(colIn) { col = colIn;};
         this.getRow = function() {return row;};
+        this.setRow = function(rowIn) { row = rowIn;};
         this.getCoordinates = function() {
             var coordinates = {
                 left: that.getCol() * BubblePop.ui.BUBBLE_DIMS / 2 * BubblePop.ui.BUBBLE_DIMS / 2,

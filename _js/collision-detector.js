@@ -2,7 +2,7 @@ var BubblePop = window.BubblePop || {};
 
 BubblePop.CollisionDetector = (function($) {
     var CollisionDetector = {
-        findIntersection: function(curBubble, board, angle){
+        findIntersection : function(curBubble, board, angle) {
             var rows = board.getRows();
             var collision = null;
             var positon = curBubble.getSprite().positon();
